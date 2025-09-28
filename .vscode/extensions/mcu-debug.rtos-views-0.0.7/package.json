@@ -1,0 +1,141 @@
+{
+	"name": "rtos-views",
+	"displayName": "RTOS Views",
+	"description": "RTOS views for microcontrollers",
+	"version": "0.0.7",
+	"publisher": "mcu-debug",
+	"preview": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mcu-debug/rtos-views"
+	},
+	"bugs": {
+		"url": "https://github.com/mcu-debug/rtos-views/issues"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "icon.png",
+	"keywords": [
+		"cortex-debug",
+		"cppdbg",
+		"embedded",
+		"rtos",
+		"cortex"
+	],
+	"activationEvents": [
+		"onDebugResolve:cortex-debug",
+		"onDebugResolve:cppdbg",
+		"onDebugResolve:cspy",
+		"onCommand:mcu-debug.rtos-views.helloWorld"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"category": "RTOS Views",
+				"command": "mcu-debug.rtos-views.helloWorld",
+				"title": "Hello World Test"
+			},
+			{
+				"category": "RTOS Views",
+				"command": "mcu-debug.rtos-views.refresh",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"category": "RTOS Views",
+				"command": "mcu-debug.rtos-views.toggleRTOSPanel",
+				"title": "Toggle RTOS Panel"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "rtos-views",
+			"properties": {
+				"mcu-debug.rtos-views.showRTOS": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enable/Disable RTOS tracking"
+				},
+				"mcu-debug.rtos-views.disableStackPeaks": {
+					"type": "boolean",
+					"default": false,
+					"description": "Determining stack peaks requires that stack memory be read to determine a high water mark. Stack peaks are useful but can be expensive in runtime."
+				}
+			}
+		},
+		"viewsContainers": {
+			"panel": [
+				{
+					"id": "rtos-views",
+					"title": "xRTOS",
+					"icon": "images/unknown.svg"
+				}
+			]
+		},
+		"views": {
+			"rtos-views": [
+				{
+					"id": "rtos-views.rtos",
+					"type": "webview",
+					"name": "xRTOS",
+					"when": "mcu-debug.rtos-views:showRTOS"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "mcu-debug.rtos-views.refresh",
+					"when": "view == rtos-views.rtos",
+					"group": "navigation@99"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -noEmit && node .esbuild.config.js --analyze",
+		"packagex": "node ./node_modules/@vscode/vsce/vsce package",
+		"lint": "eslint src --ext ts",
+		"watch": "node .esbuild.config.js --watch --analyze",
+		"test": "node ./src/test/runTest.js",
+		"package": "node ./release.js --package",
+		"publish": "node ./release.js --publish --vsx-also"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.75.0",
+		"@typescript-eslint/eslint-plugin": "^5.38.1",
+		"@typescript-eslint/parser": "^5.38.1",
+		"@vscode/test-electron": "^2.1.5",
+		"esbuild": "^0.14.53",
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.8.4",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"dependencies": {
+		"@vscode/debugprotocol": "^1.59.0",
+		"@vscode/vsce": "^2.18.0",
+		"@vscode/webview-ui-toolkit": "^1.1.0",
+		"debug-tracker-vscode": "^0.0.14"
+	},
+	"extensionDependencies": [
+		"mcu-debug.debug-tracker-vscode"
+	],
+	"__metadata": {
+		"installedTimestamp": 1741188451011,
+		"size": 1624579
+	}
+}
