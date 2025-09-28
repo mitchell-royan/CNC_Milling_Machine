@@ -15,7 +15,7 @@ The project is designed to control a CNC milling machine with:
 - Absolute coordinate control using **Bresenham's Line Algorithm**.
 - Limit switch handling for calibration and safety.
 - Stepper motor microstepping from full-step to 1/32 microsteps.
-- Fully modular **C firmware**, without SDK functions.
+- Fully modular **C firmware**, with an optional MATLAB GUI.
 
 ---
 
