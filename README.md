@@ -71,7 +71,7 @@ Uses Bresenham's Line Algorithm for straight-line interpolation.
 Supports both positive and negative positions, with 200 steps/unit resolution.
 
 ## Features
-Modular, extensible C code for future upgrades (implementation of executable G-code for standard CNC programming instead of only predefined shapes or the introduction of further harware development such as an ultrasonic sensor)
+Modular, extensible C code for future upgrades (implementation of executable G-code for standard CNC programming instead of only predefined shapes or the introduction of further hardware development such as an ultrasonic sensor)
 
 Safe operation with limit switch handling.
 
