@@ -61,7 +61,7 @@ f, g → move Z axis
 p, o → spindle speed control
 
 Pre-Coded Shapes
-Draw shapes such as square, circle, or house using functions in drawshapes.c.
+Draw shapes such as square, circle, or house using functions in main.c.
 
 Coordinate Control
 Input absolute coordinates for precise movement.
