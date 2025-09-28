@@ -48,7 +48,7 @@ CNC Milling Machine:
 Usage:
 
 Manual Control:
-Use the terminal keys mapped in events.c to move X, Y, Z axes and control the spindle.
+Use the terminal keys mapped in main.c to move X, Y, Z axes and control the spindle.
 
 Example key mappings:
 
