@@ -21,7 +21,7 @@ The project is designed to control a CNC milling machine with:
 
 ## Repository Structure
 
-CC2511_Assignment3/
+CNC Milling Machine:
 
 ├─ main.c # Main firmware code
 
