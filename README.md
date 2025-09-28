@@ -25,7 +25,7 @@ CNC Milling Machine:
 
 ├─ main.c # Main firmware code
 
-├─ PicoControlGUI.mlapp # Optional MATLAB GUI for manual and coordinate control
+├─ PicoControlGUI.m # Optional MATLAB GUI for manual and coordinate control
 
 └─ README.md # Project overview and instructions
 
